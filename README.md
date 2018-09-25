@@ -5,3 +5,7 @@
 ## Start
 
     ruby server.rb
+
+## Test
+
+    bundle exec rake
