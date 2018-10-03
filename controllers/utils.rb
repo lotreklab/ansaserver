@@ -13,13 +13,13 @@ end
 
 
 def need_swap(el1, el2, criteria)
-  if criteria == 'date' then
+  if criteria == '-date' then
     return el1.date < el2.date
-  elsif criteria == '-date' then
+  elsif criteria == 'date' then
     return el1.date > el2.date
-  elsif criteria == 'title' then
-    return el1.title < el2.title
   elsif criteria == '-title' then
+    return el1.title < el2.title
+  elsif criteria == 'title' then
     return el1.title > el2.title
   end
 end

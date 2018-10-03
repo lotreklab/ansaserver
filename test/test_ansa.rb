@@ -49,22 +49,22 @@ class AnsaNewsTest < Minitest::Test
     Ansa.stubs(:get_news).returns(generate_mocked_news())
     get '/api/news/homepage?order_by=title'
     assert last_response.ok?
-    assert_equal "Title 3", YAML.load(last_response.body)[0]['title']
+    assert_equal "Title 1", YAML.load(last_response.body)[0]['title']
 
     Ansa.stubs(:get_news).returns(generate_mocked_news())
     get '/api/news/homepage?order_by=-title'
     assert last_response.ok?
-    assert_equal "Title 1", YAML.load(last_response.body)[0]['title']
+    assert_equal "Title 3", YAML.load(last_response.body)[0]['title']
 
     Ansa.stubs(:get_news).returns(generate_mocked_news())
     get '/api/news/homepage?order_by=date'
     assert last_response.ok?
-    assert_equal "Title 3", YAML.load(last_response.body)[0]['title']
+    assert_equal "Title 1", YAML.load(last_response.body)[0]['title']
 
     Ansa.stubs(:get_news).returns(generate_mocked_news())
     get '/api/news/homepage?order_by=-date'
     assert last_response.ok?
-    assert_equal "Title 1", YAML.load(last_response.body)[0]['title']
+    assert_equal "Title 3", YAML.load(last_response.body)[0]['title']
 
     Ansa.stubs(:get_news).returns(generate_mocked_news())
     get '/api/news/homepage?order_by=-wrongpar'
