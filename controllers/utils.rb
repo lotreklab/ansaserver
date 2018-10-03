@@ -2,7 +2,10 @@ def ansa_news_to_json(news_array)
   json_array = []
   news_array.each do |news|
     json_array.append({
-      title: news.title
+      title: news.title,
+      date: news.date,
+      description: news.description,
+      link: news.link
     })
   end
   return json_array
